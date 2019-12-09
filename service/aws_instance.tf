@@ -15,5 +15,4 @@ resource "aws_instance" "shareinfo" {
     volume_size = "30"
     volume_type = "gp2"
   }
-
 }
