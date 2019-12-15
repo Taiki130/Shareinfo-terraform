@@ -9,8 +9,8 @@ resource "aws_lb_target_group" "http" {
     path                = "/health_check"
     port                = "traffic-port"
     protocol            = "HTTP"
-    timeout             = 10
-    healthy_threshold   = 3
-    unhealthy_threshold = 3
+    timeout             = 20
+    healthy_threshold   = 6
+    unhealthy_threshold = 4
   }
 }

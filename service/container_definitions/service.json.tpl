@@ -25,6 +25,10 @@
       {
         "name": "RAILS_ENV",
         "value": "production"
+      },
+      {
+        "name": "RACK_ENV",
+        "value": "production"
       }
     ],
     "secrets": [
