@@ -3,5 +3,5 @@
 ## Shareinfo
 こちらはTerraformのリポジトリです。
 
-Shareinfo↓
+Shareinfo
 https://github.com/Taiki130/Shareinfo
