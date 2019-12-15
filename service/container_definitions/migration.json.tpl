@@ -2,7 +2,7 @@
   {
     "name": "shareinfo",
     "image": "375448896084.dkr.ecr.ap-northeast-1.amazonaws.com/shareinfo-image",
-    "cpu": 200,
+    "cpu": 400,
     "memory": null,
     "memoryReservation": 600,
     "essential": true,
@@ -21,8 +21,8 @@
         "value": "production"
       },
       {
-	"name": "RACK_ENV",
-	"value": "production"
+	      "name": "RACK_ENV",
+	      "value": "production"
       }
     ],
     "secrets": [

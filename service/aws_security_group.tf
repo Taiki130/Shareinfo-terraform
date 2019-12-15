@@ -2,6 +2,9 @@ resource "aws_security_group" "instance" {
   name        = "instance"
   description = "insrance sg"
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
+  tags = {
+    Name = "rails_i_sg"
+  }
 
   ingress {
     from_port = 0
@@ -11,6 +14,13 @@ resource "aws_security_group" "instance" {
     security_groups = [
       aws_security_group.alb.id,
     ]
+  }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -25,6 +35,9 @@ resource "aws_security_group" "alb" {
   name        = "shareinfo-rails-alb"
   description = "http and https"
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
+  tags = {
+    Name = "rails_alb_sg"
+  }
 
   ingress {
     from_port = 80
@@ -58,6 +71,9 @@ resource "aws_security_group" "db" {
   name        = "shareinfo-db"
   description = "DB"
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
+  tags = {
+    Name = "rails_db_sg"
+  }
 
   ingress {
     from_port = 3306
